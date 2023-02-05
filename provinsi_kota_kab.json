@@ -1,0 +1,240 @@
+[
+  {
+    "model": "user.provinsi",
+    "pk": 1,
+    "fields": {
+      "provinsi": "Aceh"
+    }
+  },
+  {
+    "model": "user.provinsi",
+    "pk": 2,
+    "fields": {
+      "provinsi": "Bali"
+    }
+  },
+  {
+    "model": "user.provinsi",
+    "pk": 3,
+    "fields": {
+      "provinsi": "Banten"
+    }
+  },
+  {
+    "model": "user.provinsi",
+    "pk": 4,
+    "fields": {
+      "provinsi": "Bengkulu"
+    }
+  },
+  {
+    "model": "user.provinsi",
+    "pk": 5,
+    "fields": {
+      "provinsi": "DI Yogyakarta"
+    }
+  },
+  {
+    "model": "user.provinsi",
+    "pk": 6,
+    "fields": {
+      "provinsi": "DKI Jakarta"
+    }
+  },
+  {
+    "model": "user.provinsi",
+    "pk": 7,
+    "fields": {
+      "provinsi": "Gorontalo"
+    }
+  },
+  {
+    "model": "user.provinsi",
+    "pk": 8,
+    "fields": {
+      "provinsi": "Jambi"
+    }
+  },
+  {
+    "model": "user.provinsi",
+    "pk": 9,
+    "fields": {
+      "provinsi": "Jawa Barat"
+    }
+  },
+  {
+    "model": "user.provinsi",
+    "pk": 10,
+    "fields": {
+      "provinsi": "Jawa Tengah"
+    }
+  },
+  {
+    "model": "user.provinsi",
+    "pk": 11,
+    "fields": {
+      "provinsi": "Jawa Timur"
+    }
+  },
+  {
+    "model": "user.provinsi",
+    "pk": 12,
+    "fields": {
+      "provinsi": "Kalimantan Barat"
+    }
+  },
+  {
+    "model": "user.provinsi",
+    "pk": 13,
+    "fields": {
+      "provinsi": "Kalimantan Selatan"
+    }
+  },
+  {
+    "model": "user.provinsi",
+    "pk": 14,
+    "fields": {
+      "provinsi": "Kalimantan Tengah"
+    }
+  },
+  {
+    "model": "user.provinsi",
+    "pk": 15,
+    "fields": {
+      "provinsi": "Kalimantan Timur"
+    }
+  },
+  {
+    "model": "user.provinsi",
+    "pk": 16,
+    "fields": {
+      "provinsi": "Kalimantan Utara"
+    }
+  },
+  {
+    "model": "user.provinsi",
+    "pk": 17,
+    "fields": {
+      "provinsi": "Kepulauan Bangka Belitung"
+    }
+  },
+  {
+    "model": "user.provinsi",
+    "pk": 18,
+    "fields": {
+      "provinsi": "Kepulauan Riau"
+    }
+  },
+  {
+    "model": "user.provinsi",
+    "pk": 19,
+    "fields": {
+      "provinsi": "Lampung"
+    }
+  },
+  {
+    "model": "user.provinsi",
+    "pk": 20,
+    "fields": {
+      "provinsi": "Maluku"
+    }
+  },
+  {
+    "model": "user.provinsi",
+    "pk": 21,
+    "fields": {
+      "provinsi": "Maluku Utara"
+    }
+  },
+  {
+    "model": "user.provinsi",
+    "pk": 22,
+    "fields": {
+      "provinsi": "Nusa Tenggara Barat"
+    }
+  },
+  {
+    "model": "user.provinsi",
+    "pk": 23,
+    "fields": {
+      "provinsi": "Nusa Tenggara Timur"
+    }
+  },
+  {
+    "model": "user.provinsi",
+    "pk": 24,
+    "fields": {
+      "provinsi": "Papua"
+    }
+  },
+  {
+    "model": "user.provinsi",
+    "pk": 25,
+    "fields": {
+      "provinsi": "Papua Barat"
+    }
+  },
+  {
+    "model": "user.provinsi",
+    "pk": 26,
+    "fields": {
+      "provinsi": "Riau"
+    }
+  },
+  {
+    "model": "user.provinsi",
+    "pk": 27,
+    "fields": {
+      "provinsi": "Sulawesi Barat"
+    }
+  },
+  {
+    "model": "user.provinsi",
+    "pk": 28,
+    "fields": {
+      "provinsi": "Sulawesi Selatan"
+    }
+  },
+  {
+    "model": "user.provinsi",
+    "pk": 29,
+    "fields": {
+      "provinsi": "Sulawesi Tengah"
+    }
+  },
+  {
+    "model": "user.provinsi",
+    "pk": 30,
+    "fields": {
+      "provinsi": "Sulawesi Tenggara"
+    }
+  },
+  {
+    "model": "user.provinsi",
+    "pk": 31,
+    "fields": {
+      "provinsi": "Sulawesi Utara"
+    }
+  },
+  {
+    "model": "user.provinsi",
+    "pk": 32,
+    "fields": {
+      "provinsi": "Sumatera Barat"
+    }
+  },
+  {
+    "model": "user.provinsi",
+    "pk": 33,
+    "fields": {
+      "provinsi": "Sumatera Selatan"
+    }
+  },
+  {
+    "model": "user.provinsi",
+    "pk": 34,
+    "fields": {
+      "provinsi": "Sumatera Utara"
+    }
+  }
+]
