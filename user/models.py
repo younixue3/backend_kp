@@ -21,8 +21,8 @@ class User(AbstractUser):
     ]
 
     uniid = models.UUIDField(default=uuid.uuid4(), editable=False)
-    provinsi = models.ForeignKey(Provinsi, on_delete=models.CASCADE)
-    kota_kab = models.ForeignKey(KotaKabupaten, on_delete=models.CASCADE)
+    provinsi = models.ForeignKey(Provinsi, on_delete=models.CASCADE, default=15)
+    kota_kab = models.ForeignKey(KotaKabupaten, on_delete=models.CASCADE, default=189)
     no_hp = models.CharField(max_length=18, null=True)
     jenjang = models.CharField(choices=JENJANG_CHOICES, max_length=3, default='smp')
     active = models.BooleanField(default=False)
