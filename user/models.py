@@ -25,4 +25,6 @@ class User(AbstractUser):
     kota_kab = models.ForeignKey(KotaKabupaten, on_delete=models.CASCADE, default=189)
     no_hp = models.CharField(max_length=18, null=True)
     jenjang = models.CharField(choices=JENJANG_CHOICES, max_length=3, default='smp')
+    bukti_pembayaran = models.FileField(upload_to='bukti_pembayaran/', null=True)
+    terverifikasi = models.BooleanField(default=False)
     active = models.BooleanField(default=False)
