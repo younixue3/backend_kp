@@ -13,16 +13,16 @@ class BeritaPage(ModelViewSet):
     serializer_class = BeritaSerializer
     permission_classes = [permissions.IsAuthenticated]
 
-    @action(methods=['POST'], detail=False)
-    def insertBerita(self, request):
-        print(request.data)
-        berita = self.queryset.create(
-            judul=request.data['judul'],
-            isi = request.data['isi'],
-            file = request.data['file']
-        )
-        serializer = self.serializer_class(berita, many=False, context={'request': request})
-        return Response(serializer.data)
+    # @action(methods=['POST'], detail=False)
+    # def insertBerita(self, request):
+    #     print(request.data)
+    #     berita = self.queryset.create(
+    #         judul=request.data['judul'],
+    #         isi = request.data['isi'],
+    #         file = request.data['file']
+    #     )
+    #     serializer = self.serializer_class(berita, many=False, context={'request': request})
+    #     return Response(serializer.data)
     # @action(methods=['POST'], detail=True)
     # def updateBerita(self, request, pk=None):
     #     print(request.data)
@@ -33,16 +33,16 @@ class PengumumanPage(ModelViewSet):
     serializer_class = PengumumanSerializer
     permission_classes = [permissions.IsAuthenticated]
 
-    @action(methods=['POST'], detail=False)
-    def insertPengumuman(self, request):
-        print(request.data)
-        berita = self.queryset.create(
-            judul=request.data['judul'],
-            isi=request.data['isi'],
-            file=request.data['file']
-        )
-        serializer = self.serializer_class(berita, many=False, context={'request': request})
-        return Response(serializer.data)
+    # @action(methods=['POST'], detail=False)
+    # def insertPengumuman(self, request):
+    #     print(request.data)
+    #     berita = self.queryset.create(
+    #         judul=request.data['judul'],
+    #         isi=request.data['isi'],
+    #         file=request.data['file']
+    #     )
+    #     serializer = self.serializer_class(berita, many=False, context={'request': request})
+    #     return Response(serializer.data)
 class GaleriPage(ModelViewSet):
     queryset = Galeri.objects.order_by('pk')
     serializer_class = GaleriSerialzier

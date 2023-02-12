@@ -38,4 +38,4 @@ class User(AbstractUser):
     asal_sekolah = models.CharField(max_length=150)
     terverifikasi = models.BooleanField(default=False)
     active = models.BooleanField(default=False)
-    transaksi = models.ForeignKey(Transaksi, on_delete=models.DO_NOTHING)
+    transaksi = models.ForeignKey(Transaksi, on_delete=models.DO_NOTHING, null=True)

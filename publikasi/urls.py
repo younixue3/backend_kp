@@ -2,11 +2,6 @@ from django.urls import path, include
 from rest_framework import routers
 from . import views
 
-from rest_framework_simplejwt.views import (
-    TokenObtainPairView,
-    TokenRefreshView,
-)
-
 router = routers.SimpleRouter()
 
 router.register(r'berita', views.BeritaPage)
