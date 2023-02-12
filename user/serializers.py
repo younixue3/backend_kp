@@ -5,7 +5,6 @@ class ProvinsiSerializer(serializers.ModelSerializer):
     class Meta:
         model = Provinsi
         fields = '__all__'
-
 class KotaKabupatenSerializer(serializers.ModelSerializer):
     class Meta:
         model = KotaKabupaten

@@ -11,6 +11,16 @@ class Provinsi(models.Model):
 class KotaKabupaten(models.Model):
     kota = models.CharField(max_length=50)
 
+class Transaksi(models.Model):
+    STATUS_CHOICES = [
+        ('pembayaran', 'Pembayaran'),
+        ('proses', 'Proses'),
+        ('terverifikasi', 'Terverifikasi')
+    ]
+
+    bukti_pembayaran = models.FileField(upload_to='transaksi/')
+    status = models.CharField(choices=STATUS_CHOICES,max_length=13, default='pembayaran')
+
 class User(AbstractUser):
 
     JENJANG_CHOICES = [
@@ -25,6 +35,7 @@ class User(AbstractUser):
     kota_kab = models.ForeignKey(KotaKabupaten, on_delete=models.CASCADE, default=189)
     no_hp = models.CharField(max_length=18, null=True)
     jenjang = models.CharField(choices=JENJANG_CHOICES, max_length=3, default='smp')
-    bukti_pembayaran = models.FileField(upload_to='bukti_pembayaran/', null=True)
+    asal_sekolah = models.CharField(max_length=150)
     terverifikasi = models.BooleanField(default=False)
     active = models.BooleanField(default=False)
+    transaksi = models.ForeignKey(Transaksi, on_delete=models.DO_NOTHING)
