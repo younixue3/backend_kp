@@ -16,4 +16,26 @@ class EventPage(ModelViewSet):
 class GroupEventPage(ModelViewSet):
     queryset = GroupEvent.objects.order_by('pk')
     serializer_class = GroupEventSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+class JuriEventPage(ModelViewSet):
+    queryset = JuriEvent.objects.order_by('pk')
+    serializer_class = JuriEventSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+class FrontJuriEventPage(ModelViewSet):
+    queryset = JuriEvent.objects.order_by('pk')
+    serializer_class = JuriEventSerializer
     permission_classes = []
+    pagination_class = None
+
+class SponsorEventPage(ModelViewSet):
+    queryset = SponsorEvent.objects.order_by('pk')
+    serializer_class = SponsorEventSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+class FrontSponsorEventPage(ModelViewSet):
+    queryset = SponsorEvent.objects.order_by('pk')
+    serializer_class = SponsorEventSerializer
+    permission_classes = []
+    pagination_class = None

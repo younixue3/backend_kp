@@ -3,6 +3,8 @@ from django.db import models
 from django.utils import timezone
 import uuid
 
+from event.models import *
+
 
 class Provinsi(models.Model):
     provinsi = models.CharField(max_length=50)
@@ -18,7 +20,8 @@ class Transaksi(models.Model):
         ('terverifikasi', 'Terverifikasi')
     ]
 
-    bukti_pembayaran = models.FileField(upload_to='transaksi/')
+    bukti_pembayaran = models.FileField(upload_to='transaksi/', null=True)
+    deskripsi = models.CharField(max_length=200, null=True)
     status = models.CharField(choices=STATUS_CHOICES,max_length=13, default='pembayaran')
 
 class User(AbstractUser):
@@ -38,4 +41,5 @@ class User(AbstractUser):
     asal_sekolah = models.CharField(max_length=150)
     terverifikasi = models.BooleanField(default=False)
     active = models.BooleanField(default=False)
-    transaksi = models.ForeignKey(Transaksi, on_delete=models.DO_NOTHING, null=True)
+    group_event = models.ForeignKey(GroupEvent, on_delete=models.CASCADE, null=True)
+    transaksi = models.OneToOneField(Transaksi, on_delete=models.DO_NOTHING, null=True)

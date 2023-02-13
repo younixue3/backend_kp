@@ -13,3 +13,13 @@ class GroupEvent(models.Model):
     event = models.ForeignKey(Event, on_delete=models.DO_NOTHING)
     total_nominal = models.IntegerField()
     anggota = models.ManyToManyField(AnggotaGroup)
+
+class JuriEvent(models.Model):
+    nama = models.CharField(max_length=200)
+    deskripsi = models.TextField()
+    image = models.FileField(upload_to='juri/foto/')
+    video = models.FileField(upload_to='juri/video/')
+
+class SponsorEvent(models.Model):
+    nama = models.CharField(max_length=100)
+    logo = models.FileField(upload_to='event/sponsor/')

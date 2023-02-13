@@ -13,36 +13,29 @@ class BeritaPage(ModelViewSet):
     serializer_class = BeritaSerializer
     permission_classes = [permissions.IsAuthenticated]
 
-    # @action(methods=['POST'], detail=False)
-    # def insertBerita(self, request):
-    #     print(request.data)
-    #     berita = self.queryset.create(
-    #         judul=request.data['judul'],
-    #         isi = request.data['isi'],
-    #         file = request.data['file']
-    #     )
-    #     serializer = self.serializer_class(berita, many=False, context={'request': request})
-    #     return Response(serializer.data)
-    # @action(methods=['POST'], detail=True)
-    # def updateBerita(self, request, pk=None):
-    #     print(request.data)
-    #     berita = Berita.objects.get(id=pk)
-    #     print(berita)
+class FrontBeritaPage(ReadOnlyModelViewSet):
+    queryset = Berita.objects.order_by('pk')
+    serializer_class = FrontBeritaSerializer
+    permission_classes = []
+    lookup_field = 'slug'
+
 class PengumumanPage(ModelViewSet):
     queryset = Pengumuman.objects.order_by('pk')
     serializer_class = PengumumanSerializer
     permission_classes = [permissions.IsAuthenticated]
 
-    # @action(methods=['POST'], detail=False)
-    # def insertPengumuman(self, request):
-    #     print(request.data)
-    #     berita = self.queryset.create(
-    #         judul=request.data['judul'],
-    #         isi=request.data['isi'],
-    #         file=request.data['file']
-    #     )
-    #     serializer = self.serializer_class(berita, many=False, context={'request': request})
-    #     return Response(serializer.data)
+class FrontPengumumanPage(ReadOnlyModelViewSet):
+    queryset = Pengumuman.objects.order_by('pk')
+    serializer_class = FrontPengumumanSerializer
+    permission_classes = []
+    lookup_field = 'slug'
+
+class FrontImagesPage(ModelViewSet):
+    queryset = ImageGaleri.objects.order_by('pk')
+    serializer_class = ImageGaleriSerializer
+    permission_classes = []
+    pagination_class = None
+
 class GaleriPage(ModelViewSet):
     queryset = Galeri.objects.order_by('pk')
     serializer_class = GaleriSerialzier
@@ -68,7 +61,23 @@ class GaleriPage(ModelViewSet):
         serializer = self.serializer_class(galeri, context={'request': request})
         return Response(serializer.data)
 
+class FrontGaleriPage(ModelViewSet):
+    queryset = Galeri.objects.order_by('pk')
+    serializer_class = FrontGaleriSerialzier
+    permission_classes = []
+
 class ImageGaleriPage(ModelViewSet):
     queryset = ImageGaleri.objects.order_by('pk')
     serializer_class = ImageGaleriSerializer
     permission_classes = [permissions.IsAuthenticated]
+
+class TestimoniPage(ModelViewSet):
+    queryset = Testimoni.objects.order_by('pk')
+    serializer_class = TestimoniSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+class FrontTestimoniPage(ModelViewSet):
+    queryset = Testimoni.objects.order_by('pk')
+    serializer_class = TestimoniSerializer
+    permission_classes = []
+    pagination_class = None

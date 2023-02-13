@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from rest_framework.viewsets import ReadOnlyModelViewSet
+from rest_framework.viewsets import ReadOnlyModelViewSet, ModelViewSet
 
 from .models import *
 from .serializers import *
@@ -21,7 +21,7 @@ def get_profile(request):
     valid_data = AccessToken(request.data['access'])
     print(valid_data['user_id'])
     user = User.objects.get(pk=valid_data['user_id'])
-    serializer = UserSerializer(user, many=False)
+    serializer = ProfileSerializer(user, many=False)
     return Response(serializer.data)
 @api_view(['GET'])
 def get_provinsi(request):
@@ -33,6 +33,16 @@ def get_kota_kab(request):
     kota_kab = KotaKabupaten.objects.all()
     serializer = KotaKabupatenSerializer(kota_kab, many=True)
     return Response(serializer.data)
+
+class TransaksiPage(ModelViewSet):
+    queryset = Transaksi.objects.order_by('pk')
+    serializer_class = TransaksiSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+class PesertaPage(ModelViewSet):
+    queryset = User.objects.filter(is_staff=False).order_by('pk')
+    serializer_class = ProfileSerializer
+    permission_classes = [permissions.IsAuthenticated]
 
 class Auth(ReadOnlyModelViewSet):
     queryset = User.objects.order_by('pk')
@@ -48,6 +58,7 @@ class Auth(ReadOnlyModelViewSet):
         user.email = request.data['email']
         user.set_password(request.data['password'])
         user.jenjang = request.data['jenjang']
+        user.asal_sekolah = request.data['asal_sekolah']
         user.provinsi = Provinsi.objects.get(pk=request.data['provinsi'])
         user.kota_kab = KotaKabupaten.objects.get(pk=request.data['kota'])
         user.save()

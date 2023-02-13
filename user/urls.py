@@ -10,6 +10,8 @@ from rest_framework_simplejwt.views import (
 router = routers.SimpleRouter()
 
 router.register(r'auth', views.Auth)
+router.register(r'peserta', views.PesertaPage)
+router.register(r'transaksi', views.TransaksiPage)
 
 urlpatterns = [
     path('', include(router.urls)),
