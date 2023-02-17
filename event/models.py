@@ -17,9 +17,9 @@ class GroupEvent(models.Model):
 class JuriEvent(models.Model):
     nama = models.CharField(max_length=200)
     deskripsi = models.TextField()
-    image = models.FileField(upload_to='juri/foto/')
-    video = models.FileField(upload_to='juri/video/')
+    image = models.FileField(upload_to='juri/foto/', null=True)
+    video = models.FileField(upload_to='juri/video/', null=True)
 
 class SponsorEvent(models.Model):
     nama = models.CharField(max_length=100)
-    logo = models.FileField(upload_to='event/sponsor/')
+    logo = models.FileField(upload_to='event/sponsor/', null=True)

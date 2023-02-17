@@ -2,3 +2,10 @@ backend_kp/__pycache__/*
 
 user/__pycache__/*
 user/migrations/*
+event/__pycache__/*
+event/migrations/*
+publikasi/__pycache__/*
+publikasi/migrations/*
+
+juri/*
+transaksi/*
