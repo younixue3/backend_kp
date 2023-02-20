@@ -10,6 +10,7 @@ router.register(r'juri', views.JuriEventPage)
 router.register(r'sponsor', views.SponsorEventPage)
 router.register(r'front-juri', views.FrontJuriEventPage)
 router.register(r'front-sponsor', views.FrontSponsorEventPage)
+router.register(r'kategori', views.KategoriPage)
 
 urlpatterns = [
     path('', include(router.urls)),

@@ -39,3 +39,28 @@ class FrontSponsorEventPage(ModelViewSet):
     serializer_class = SponsorEventSerializer
     permission_classes = []
     pagination_class = None
+
+class KategoriPage(ModelViewSet):
+    queryset = Kategori.objects.order_by('pk')
+    serializer_class = KategoriSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    @action(methods=['POST'], detail=True)
+    def addKategori(self, request, pk=None):
+        queryset = Event.objects.order_by('pk').get(id=pk)
+        queryset.kategori.create(
+            nama=request.data['nama'],
+            nominal=request.data['nominal'],
+            jenjang=request.data['jenjang']
+        )
+        return Response({
+            'type': 'success',
+            'message': 'Data berhasil di inputkan'
+        })
+
+    @action(methods=['POST'], detail=True)
+    def getKategori(self, request, pk=None):
+        queryset = Event.objects.get(id=pk)
+        queryset = queryset.kategori.filter(jenjang=request.data['jenjang']).all()
+        serializer = KategoriSerializer(queryset, many=True)
+        return Response(serializer.data)
