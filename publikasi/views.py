@@ -34,7 +34,6 @@ class FrontImagesPage(ModelViewSet):
     queryset = ImageGaleri.objects.order_by('pk')
     serializer_class = ImageGaleriSerializer
     permission_classes = []
-    pagination_class = None
 
 class GaleriPage(ModelViewSet):
     queryset = Galeri.objects.order_by('pk')
