@@ -12,12 +12,6 @@ from rest_framework_simplejwt.backends import TokenBackend
 
 @api_view(['POST'])
 def get_profile(request):
-    # print(request.data['refresh'])
-    # token = {
-    #     'token': request.data['access']
-    # }
-    # print(token['token'].encode())
-    # valid_data = TokenBackend(algorithm='HS256').decode(token, verify=True)
     valid_data = AccessToken(request.data['access'])
     print(valid_data['user_id'])
     user = User.objects.get(pk=valid_data['user_id'])
