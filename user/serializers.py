@@ -20,7 +20,7 @@ class TransaksiSerializer(serializers.ModelSerializer):
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = '__all__'
+        fields = ['email', 'first_name', 'last_name', 'no_hp', 'email', 'jenjang', 'asal_sekolah', 'provinsi', 'kota_kab']
 
 class ProfileSerializer(serializers.ModelSerializer):
     transaksi = TransaksiSerializer(many=False)
