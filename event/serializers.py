@@ -31,6 +31,7 @@ class AnggotaGroupSerializer(serializers.ModelSerializer):
 
 class GroupEventSerializer(serializers.ModelSerializer):
     anggota = AnggotaGroupSerializer(many=True)
+    kategori = serializers.IntegerField()
     # user = serializers.PrimaryKeyRelatedField(many=False, read_only=True)
     class Meta:
         model = GroupEvent
