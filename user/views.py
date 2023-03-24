@@ -31,12 +31,27 @@ def get_kota_kab(request):
 class TransaksiPage(ModelViewSet):
     queryset = Transaksi.objects.order_by('pk')
     serializer_class = TransaksiSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = []
+
+    @action(methods=['POST'], detail=False)
+    def testftp(self, request):
+        FTP_HOST = 'ftp.hbics.sch.id'
+        FTP_USER = 'u1136649@secondary.hbics.sch.id'
+        FTP_PASS = 'chc3nskaki'
+        ftp = ftplib.FTP(FTP_HOST, FTP_USER, FTP_PASS)
+        ftp.encoding = 'utf-8'
+        file_data = request.FILES['file']
+        print(file_data)
+        filename = file_data
+        with open(filename, 'rb') as file:
+            ftp.storbinary('STOR' + filename, filename)
+        ftp.dir()
+        print('test')
 
 class PesertaPage(ModelViewSet):
     queryset = User.objects.filter(is_staff=False).order_by('pk')
     serializer_class = ProfileSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = []
 
 class Auth(ReadOnlyModelViewSet):
     queryset = User.objects.order_by('pk')

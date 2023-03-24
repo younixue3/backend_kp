@@ -16,7 +16,7 @@ class EventPage(ModelViewSet):
 class GroupEventPage(ModelViewSet):
     queryset = GroupEvent.objects.order_by('pk')
     serializer_class = GroupEventSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = []
 
 class JuriEventPage(ModelViewSet):
     queryset = JuriEvent.objects.order_by('pk')
