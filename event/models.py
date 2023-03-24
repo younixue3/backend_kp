@@ -15,7 +15,7 @@ class Kategori(models.Model):
 class Event(models.Model):
     nama = models.CharField(max_length=150)
     deskripsi = models.TextField()
-    logo = models.TextField()
+    logo = models.TextField(null=True)
     kategori = models.ManyToManyField(Kategori, null=True, blank=False)
 
 class AnggotaGroup(models.Model):
@@ -31,9 +31,9 @@ class GroupEvent(models.Model):
 class JuriEvent(models.Model):
     nama = models.CharField(max_length=200)
     deskripsi = models.TextField()
-    image = models.TextField()
-    video = models.TextField()
+    image = models.TextField(null=True)
+    video = models.TextField(null=True)
 
 class SponsorEvent(models.Model):
     nama = models.CharField(max_length=100)
-    logo = models.TextField()
+    logo = models.TextField(null=True)

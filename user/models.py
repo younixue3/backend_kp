@@ -20,7 +20,7 @@ class Transaksi(models.Model):
         ('terverifikasi', 'Terverifikasi')
     ]
 
-    bukti_pembayaran = models.TextField()
+    bukti_pembayaran = models.TextField(null=True)
     deskripsi = models.CharField(max_length=200, null=True)
     status = models.CharField(choices=STATUS_CHOICES,max_length=13, default='pembayaran')
 

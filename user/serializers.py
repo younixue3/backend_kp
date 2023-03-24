@@ -21,21 +21,6 @@ class TransaksiSerializer(serializers.ModelSerializer):
         model = Transaksi
         fields = '__all__'
 
-    # def put(self, validated_data):
-    #     FTP_HOST = 'ftp.hbics.sch.id'
-    #     FTP_USER = 'u1136649@secondary.hbics.sch.id'
-    #     FTP_PASS = 'chc3nskaki'
-    #     ftp = ftplib.FTP(FTP_HOST, FTP_USER, FTP_PASS)
-    #     ftp.encoding = 'utf-8'
-    #     file_data = validated_data.pop('bukti_pembayaran')
-    #     filename = 'file_data.csv'
-    #     with open(filename, 'rb') as file:
-    #         ftp.storbinary("STOR file_data.csv", filename)
-    #     ftp.dir()
-    #     print('test')
-
-
-
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
